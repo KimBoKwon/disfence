@@ -5,6 +5,9 @@
         <title>결과</title>
     </head>
     <body>
-        
+        {% for i in data %}
+        온도 : {{ i[0] }}
+        장소 : {{ i[1] }}
+        {% endfor %}
     </body>
 </html>

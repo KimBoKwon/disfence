@@ -14,9 +14,11 @@ def result():
         temperature = request.form['temperature']
         space = request.form['space']
         print(temperature, space)
-        ret = dbconfig.insert_data(temperature, space)
-        print(ret)
-#        return render_template('result.html')
+        into = dbconfig.insert_data(temperature, space)
+        print(into)
+        out = dbconfig.select_all()
+        print(out)
+        return render_template('result.html', data=out)
 
 if __name__ == '__main__':
     app.run(debug=True)
